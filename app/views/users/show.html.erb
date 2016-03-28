@@ -1,1 +1,17 @@
-show.html.erb
+<h3><%= current_user.name %></h3>
+<p>
+  Mood: <%= current_user.mood %><br>
+  Tickets: <%= current_user.tickets %><br>
+  Height: <%= current_user.height %><br>
+</p>
+
+
+
+
+
+<!--    expect(page).to have_content("Amy Poehler")
+    expect(page).to have_content("Mood")
+    expect(page).to have_content("happy")
+    expect(page).to have_content("15")
+    expect(page).to have_content("58")
+ -->
