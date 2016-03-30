@@ -1,17 +1,24 @@
-<h3><%= current_user.name %></h3>
+<h3><%= @user.name %></h3>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
 <p>
-  Mood: <%= current_user.mood %><br>
-  Tickets: <%= current_user.tickets %><br>
-  Height: <%= current_user.height %><br>
+  <% if @user.admin %>
+    <h5>ADMIN</h5>
+  <% else %>
+    Mood: <%= @user.mood %><br>
+    Tickets: <%= @user.tickets %><br>
+    Height: <%= @user.height %><br>
+  <% end %>
 </p>
 
+<%= link_to 'See attractions', attractions_path %><br>
+
+<%= link_to "Log Out", session_path, method: 'delete'  %>
 
 
 
 
-<!--    expect(page).to have_content("Amy Poehler")
-    expect(page).to have_content("Mood")
-    expect(page).to have_content("happy")
-    expect(page).to have_content("15")
-    expect(page).to have_content("58")
- -->
+

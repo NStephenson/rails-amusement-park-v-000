@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   resources :users
   resources :attractions
+  resources :sessions, only: [:create, :destroy]
+  resources :rides, only: :create
 
-  root "attractions#index"
+  get '/signin', to: 'sessions#new'
+
+  root "application#index"
 
 end
